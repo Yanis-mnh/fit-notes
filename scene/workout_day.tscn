@@ -1,0 +1,143 @@
+[gd_scene load_steps=13 format=3 uid="uid://5n5d3ob1tks0"]
+
+[ext_resource type="Texture2D" uid="uid://d2s87jlfc6yua" path="res://assets/delet.png" id="1_7hlda"]
+[ext_resource type="Texture2D" uid="uid://dfokqaniydnpu" path="res://assets/add.png" id="1_261a7"]
+[ext_resource type="Script" path="res://scene/workout_day.gd" id="1_a6ecp"]
+[ext_resource type="Script" path="res://scene/delet_all.gd" id="1_bgxsg"]
+[ext_resource type="Script" path="res://scene/home_btn.gd" id="1_gvq78"]
+[ext_resource type="Theme" uid="uid://d27uqo5gxeefi" path="res://scene/themes/theme.tres" id="1_idl23"]
+[ext_resource type="Script" path="res://scene/virtualKeyborad.gd" id="1_og7q1"]
+[ext_resource type="Texture2D" uid="uid://bud4iacrwwu18" path="res://assets/home.png" id="1_pumaj"]
+[ext_resource type="Script" path="res://scene/button.gd" id="2_oh18x"]
+[ext_resource type="FontFile" uid="uid://2lqsxrhh33m3" path="res://Roboto-BoldItalic.ttf" id="2_p725b"]
+[ext_resource type="Texture2D" uid="uid://c5g0judkkjpq6" path="res://assets/save.png" id="4_7yjta"]
+[ext_resource type="Script" path="res://scene/save.gd" id="5_0voxo"]
+
+[node name="workout_day" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_idl23")
+script = ExtResource("1_a6ecp")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_right = 10.0
+offset_bottom = -208.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+script = ExtResource("1_og7q1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/CenterContainer"]
+custom_minimum_size = Vector2(850, 500)
+layout_mode = 2
+color = Color(0.099007, 0.107262, 0.193332, 1)
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -412.5
+offset_top = -58.5
+offset_right = 412.5
+offset_bottom = 58.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_p725b")
+theme_override_font_sizes/font_size = 48
+text = "WORKOUT EMPTY 
+PRESS THE + SIGN TO ADD WORK OUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -144.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="delet_all" type="TextureButton" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_7hlda")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_bgxsg")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="save" type="TextureButton" parent="HBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_7yjta")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_0voxo")
+
+[node name="Home_btn" type="TextureButton" parent="HBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_pumaj")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_gvq78")
+
+[node name="Add_btn" type="TextureButton" parent="HBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("1_261a7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_oh18x")
+
+[connection signal="button_down" from="HBoxContainer2/delet_all" to="HBoxContainer2/delet_all" method="_on_button_down"]
+[connection signal="button_up" from="HBoxContainer2/delet_all" to="HBoxContainer2/delet_all" method="_on_button_up"]
+[connection signal="pressed" from="HBoxContainer2/delet_all" to="." method="_on_delet_all_pressed"]
+[connection signal="button_down" from="HBoxContainer2/HBoxContainer/save" to="HBoxContainer2/HBoxContainer/save" method="_on_button_down"]
+[connection signal="button_up" from="HBoxContainer2/HBoxContainer/save" to="HBoxContainer2/HBoxContainer/save" method="_on_button_up"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer/save" to="." method="_on_save_pressed"]
+[connection signal="button_down" from="HBoxContainer2/HBoxContainer/Home_btn" to="HBoxContainer2/HBoxContainer/Home_btn" method="_on_button_down"]
+[connection signal="button_up" from="HBoxContainer2/HBoxContainer/Home_btn" to="HBoxContainer2/HBoxContainer/Home_btn" method="_on_button_up"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer/Home_btn" to="HBoxContainer2/HBoxContainer/Home_btn" method="_on_pressed"]
+[connection signal="button_down" from="HBoxContainer2/HBoxContainer/Add_btn" to="HBoxContainer2/HBoxContainer/Add_btn" method="_on_button_down"]
+[connection signal="button_up" from="HBoxContainer2/HBoxContainer/Add_btn" to="HBoxContainer2/HBoxContainer/Add_btn" method="_on_button_up"]
+[connection signal="pressed" from="HBoxContainer2/HBoxContainer/Add_btn" to="HBoxContainer2/HBoxContainer/Add_btn" method="_on_pressed"]

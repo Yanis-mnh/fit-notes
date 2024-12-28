@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg7y1i800foql"]
+
+[ext_resource type="Texture2D" uid="uid://dfokqaniydnpu" path="res://assets/add.png" id="1_4i230"]
+[ext_resource type="Script" path="res://scene/Button/button.gd" id="2_imbnl"]
+
+[node name="Button" type="TextureButton"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+texture_normal = ExtResource("1_4i230")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_imbnl")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

@@ -1,0 +1,31 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://d27uqo5gxeefi"]
+
+[ext_resource type="FontFile" uid="uid://2lqsxrhh33m3" path="res://Roboto-BoldItalic.ttf" id="1_8nlka"]
+[ext_resource type="Texture2D" uid="uid://bfm2b5i085fpn" path="res://assets/bcButton.png" id="2_eaf5n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5rmos"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n26rp"]
+texture = ExtResource("2_eaf5n")
+modulate_color = Color(0.0855947, 0.093132, 0.171813, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ggdj6"]
+bg_color = Color(0.125159, 0.135154, 0.234717, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_limgx"]
+texture = ExtResource("2_eaf5n")
+modulate_color = Color(0.0862745, 0.0941176, 0.172549, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_8nlka")
+Button/styles/focus = SubResource("StyleBoxEmpty_5rmos")
+Button/styles/normal = SubResource("StyleBoxTexture_n26rp")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 48
+Label/fonts/font = ExtResource("1_8nlka")
+LineEdit/fonts/font = ExtResource("1_8nlka")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_ggdj6")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_limgx")

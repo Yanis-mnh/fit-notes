@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyf702hp5e7yu"]
+
+[ext_resource type="FontFile" uid="uid://2lqsxrhh33m3" path="res://Roboto-BoldItalic.ttf" id="1_mnabi"]
+[ext_resource type="Script" path="res://scene/serie/serie.gd" id="1_xh08l"]
+[ext_resource type="PackedScene" uid="uid://dmbb7hj5u1m2s" path="res://scene/serie/texture_progress_bar.tscn" id="3_hqh2r"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.207
+offset_bottom = -3.20001
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_xh08l")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(800, 200)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="name" type="LineEdit" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(650, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_mnabi")
+theme_override_font_sizes/font_size = 48
+placeholder_text = "NAME"
+alignment = 1
+max_length = 19
+
+[node name="nbrSerie" type="LineEdit" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_mnabi")
+theme_override_font_sizes/font_size = 48
+placeholder_text = "Nbr serie"
+alignment = 1
+expand_to_text_length = true
+virtual_keyboard_type = 2
+
+[node name="title_rep" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_mnabi")
+theme_override_font_sizes/font_size = 40
+text = "Nbr de repetetion:"
+
+[node name="rep_container" type="VBoxContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="TextureProgressBar" parent="." instance=ExtResource("3_hqh2r")]
+visible = false
+layout_mode = 0
+offset_left = 724.0
+offset_top = 42.0
+offset_right = 852.0
+offset_bottom = 170.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="resized" from="MarginContainer/CenterContainer/VBoxContainer" to="." method="_on_v_box_container_resized"]
+[connection signal="text_changed" from="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer/nbrSerie" to="." method="_on_nbr_serie_text_changed"]

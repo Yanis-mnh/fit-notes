@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvlles4diujqi"]
+
+[ext_resource type="FontFile" uid="uid://2lqsxrhh33m3" path="res://Roboto-BoldItalic.ttf" id="1_2n45r"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_constants/separation = 5
+
+[node name="rep" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_2n45r")
+theme_override_font_sizes/font_size = 40
+placeholder_text = "rep 1"
+virtual_keyboard_type = 2
+
+[node name="poids" type="LineEdit" parent="."]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_2n45r")
+theme_override_font_sizes/font_size = 40
+placeholder_text = "weight"
+virtual_keyboard_type = 2
