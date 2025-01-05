@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cigo5tkj6e5k1"]
+
+[ext_resource type="Script" path="res://scene/global_scene/keyboard_manager.gd" id="1_81r11"]
+
+[node name="keyboard_manager" type="Node"]
+script = ExtResource("1_81r11")

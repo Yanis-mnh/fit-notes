@@ -38,7 +38,7 @@ custom_minimum_size = Vector2(800, 200)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="name" type="LineEdit" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="name" type="LineEdit" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" groups=["line_edit"]]
 custom_minimum_size = Vector2(650, 0)
 layout_mode = 2
 mouse_filter = 1
@@ -48,9 +48,10 @@ theme_override_fonts/font = ExtResource("1_mnabi")
 theme_override_font_sizes/font_size = 48
 placeholder_text = "NAME"
 alignment = 1
-max_length = 19
+max_length = 31
+drag_and_drop_selection_enabled = false
 
-[node name="nbrSerie" type="LineEdit" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="nbrSerie" type="LineEdit" parent="MarginContainer/CenterContainer/VBoxContainer/HBoxContainer" groups=["line_edit"]]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 mouse_filter = 1
@@ -60,8 +61,9 @@ theme_override_fonts/font = ExtResource("1_mnabi")
 theme_override_font_sizes/font_size = 48
 placeholder_text = "Nbr serie"
 alignment = 1
-expand_to_text_length = true
+max_length = 1
 virtual_keyboard_type = 2
+select_all_on_focus = true
 
 [node name="title_rep" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -82,6 +84,8 @@ offset_top = 42.0
 offset_right = 852.0
 offset_bottom = 170.0
 mouse_filter = 2
+max_value = 2.0
+step = 0.01
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

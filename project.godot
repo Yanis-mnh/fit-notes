@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 
 SceanTransi="*res://scene/global_scene/scean_transi.tscn"
 SaveManager="*res://scene/global_scene/save_manager.tscn"
+KeyboardManager="*res://scene/global_scene/keyboard_manager.gd"
 
 [display]
 
@@ -36,6 +37,10 @@ window/handheld/orientation=1
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/simplescriptscroll/plugin.cfg")
+
+[global_group]
+
+line_edit=""
 
 [input]
 

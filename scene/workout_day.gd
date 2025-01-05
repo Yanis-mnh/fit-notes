@@ -17,10 +17,8 @@ var workouts = {
 	}
 
 func _ready() -> void:
-	print(OS.get_data_dir())
 	id = SceanTransi.get_id()
 	var workout = SaveManager._load(id).workouts
-	print(workout)
 	if workout.is_empty():
 		$MarginContainer/CenterContainer.visible = true
 	for i in workout:
