@@ -4,7 +4,7 @@ Fit Notes is a simple and intuitive application built with [Godot 4](https://god
 
 ## Interface
 user friendly interface:
-![Application Screenshot](screenshots/Screenshot.jpg)
+<img src="screenshots/Screenshot.jpg" alt="Application Screenshot" width="500"/>
 
 
 ## Data Structure
@@ -58,4 +58,4 @@ Each item in the `workouts` array has the following format:
 - `repetitions`: An array of numbers indicating the number of repetitions per set.
 - `weights`: An array of numbers specifying the weights used for each set.
 
-This simple structure makes the data easy to load and write, ensuring flexibility and scalability for future updates.
+This simple structure makes the data easy to load and write.
