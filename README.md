@@ -3,8 +3,8 @@
 Fit Notes is a simple and intuitive application built with [Godot 4](https://godotengine.org/) to help you track and monitor your workout progress effectively.
 
 ## Interface
-user friendly interface:
-<img src="screenshots/Screenshot.jpg" alt="Application Screenshot" width="500"/>
+
+<img src="screenshots/Screenshot.jpg" alt="Application Screenshot" width="250"/>
 
 
 ## Data Structure
